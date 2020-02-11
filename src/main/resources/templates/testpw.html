@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>Demo app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Java Securty Code Workshop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="/users">Search </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/upload">Import<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addUser">Add User</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+
+
+<div class="container">
+    <h1>Test password</h1>
+    <form th:action="@{/testpw}" th:object="${passworddto}" method="post">
+        <div class="row">
+            <div class="col-sm">Username:</div><div class="col-sm"><input type="text" th:value="${passworddto.username}" name="username" readonly/></div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Password:</div><div class="col-sm"><input type="text" th:value="${passworddto.password}" name="password"/></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Test password</button>
+    </form>
+    <br>
+    <div class="alert alert-success" role="alert" th:if="${message == true}"> Password is correct! </div>
+    <div class="alert alert-danger" role="alert" th:if="${message == false}"> Password is NOT correct! </div>
+
+
+
+
+</div>
+</body>
+</html>

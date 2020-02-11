@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<users>
+    <user>
+        <firstname>Matt</firstname>
+        <lastname>Murdock</lastname>
+        <username>Daredevil</username>
+        <password>BlindFighter</password>
+        <comment>Lives in Hell's Kitchen NYC and is blind.</comment>
+    </user>
+    <user>
+        <firstname>Dick</firstname>
+        <lastname>Grayson</lastname>
+        <username>Robin</username>
+        <password>boyWonder</password>
+        <comment>The junior counterpart of Batman</comment>
+    </user>
+</users>
