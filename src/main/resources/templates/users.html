@@ -39,7 +39,7 @@
 
 <div class="container">
     <h1> Search Users </h1>
-    <p>Search for users by username. (use % as wildcard e.g. Hell%)</p>
+    <p>Search for users by username. (use % as wildcard)</p>
     <form th:action="@{/users}" method="post">
         <input type="text" th:value="${username}" name="username"/>
         <input type="submit"/>

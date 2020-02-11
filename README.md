@@ -32,6 +32,8 @@ Alternatively you can run this Spring boot app from your IDE if you wish to do t
 ## Application
 When your application is running you can access it at [http://localhost:8080/](http://localhost:8080/)
 
+![homepage](images/index.png)
+
 This application allows you to search through a user database and allows you do some basic admin tasks on that.
 Play around for a bit to see how it works.
 
@@ -40,9 +42,11 @@ Play around for a bit to see how it works.
 
 ## Assignment 1 Search
 
-On the search page you can search the users by **username**.
+On the Search page you can search the users by **username**.
 By using a `%` you can provide wildcards. For instance `Super%` will give you the result for **Superman**
 Using the search term `%man`
+
+![Search](images/search.png)
 
 ### 1a Try to create as search phrase that searches for the **firstname** 'Bruce'
 
@@ -72,6 +76,8 @@ Click to see [Hint 7](hints/search/hint7.md)
 On the import page you can import new users by using an XML.
 We already created a sample XML file `users.xml` that you can use to import new users
 
+![Import](images/import.png)
+
 ### 2a import new users using the `user.xml` file.
 ### 2b edit the file so we can read the `etc/passwd` file on your machine (or any other file for that matter)
 
@@ -92,6 +98,7 @@ Click to see [Hint 6](hints/import/hint6.md)
 Click to see [Hint 7](hints/import/hint7.md)
 
 Click to see [Hint 8](hints/import/hint8.md)
+
 
 
     
