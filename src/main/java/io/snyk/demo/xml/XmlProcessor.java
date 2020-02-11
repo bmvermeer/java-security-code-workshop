@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -34,6 +32,9 @@ public class XmlProcessor {
     private SAXParser saxParser;
     private DefaultHandler handler;
     private List<String> messages = new ArrayList<>();
+
+
+
 
     public XmlProcessor() {
         try {

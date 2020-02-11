@@ -44,27 +44,54 @@ On the search page you can search the users by **username**.
 By using a `%` you can provide wildcards. For instance `Super%` will give you the result for **Superman**
 Using the search term `%man`
 
-- 1a Try to create as search phrase that searches for the **firstname** 'Bruce'
+### 1a Try to create as search phrase that searches for the **firstname** 'Bruce'
 
     
-Click to see [Hint 1](hints/search/hint1.md).
+Click to see [Hint 1](hints/search/hint1.md)
 
-Click to see [Hint 2](hints/search/hint2.md).
+Click to see [Hint 2](hints/search/hint2.md)
 
     
-- 1b Try to override every **lastname** with 'EVIL'
+### 1b Try to override every **lastname** with 'EVIL'
     
-Click to see [Hint 3](hints/search/hint3.md).
+Click to see [Hint 3](hints/search/hint3.md)
 
-Click to see [Hint 3](hints/search/hint4.md).
+Click to see [Hint 4](hints/search/hint4.md)
     
-- 1c Fix the vulnerability
+### 1c Fix the vulnerability
 
-Click to see [Hint 5](hints/search/hint5.md).
+Click to see [Hint 5](hints/search/hint5.md)
 
-Click to see [Hint 6](hints/search/hint6.md).
+Click to see [Hint 6](hints/search/hint6.md)
 
-Click to see [Hint 7](hints/search/hint7.md).
+Click to see [Hint 7](hints/search/hint7.md)
+
+
+## Assignment 2 Import
+
+On the import page you can import new users by using an XML.
+We already created a sample XML file `users.xml` that you can use to import new users
+
+### 2a import new users using the `user.xml` file.
+### 2b edit the file so we can read the `etc/passwd` file on your machine (or any other file for that matter)
+
+Click to see [Hint 1](hints/import/hint1.md)
+
+Click to see [Hint 2](hints/import/hint2.md)
+
+Click to see [Hint 3](hints/import/hint3.md)
+
+Click to see [Hint 4](hints/import/hint4.md)
+
+Click to see [Hint 5](hints/import/hint5.md)
+
+Click to see [Hint 6](hints/import/hint6.md)
+
+### 2c Fix the vulnerability
+
+Click to see [Hint 7](hints/import/hint7.md)
+
+Click to see [Hint 8](hints/import/hint8.md)
 
 
     
