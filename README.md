@@ -1,13 +1,13 @@
-#Java Security Code Workshop
+# Java Security Code Workshop
 In this step by step workshop you'll learn how to exploit this Java application and the code changes you need to make to fix it.
 
-##Required software
+## Required software
 - Java 8
 - Maven
 - Browser (prefable Chrome)
 - IDE / Code editor
 
-#Introduction
+# Introduction
 
 This workshop contains a demo Java application build on with Spring boot and Thymeleaf.
 It contains a number of security issues in the source code.
@@ -20,7 +20,7 @@ The vulnerablilities covered in this workshop:
 - Encryption
 - 
 
-#Installation
+## Installation
 
 - Check out the repository
 - go to the `java-code-workshop` folder
@@ -29,16 +29,16 @@ The vulnerablilities covered in this workshop:
 
 Alternatively you can run this Spring boot app from your IDE if you wish to do that.
 
-#Application
+## Application
 When your application is running you can access it at [http://localhost:8080/](http://localhost:8080/)
 
 This application allows you to search through a user database and allows you do some basic admin tasks on that.
 Play around for a bit to see how it works.
 
 
-#Assignments
+# Assignments
 
-##Assignment 1 Search
+## Assignment 1 Search
 
 On the search page you can search the users by **username**.
 By using a `%` you can provide wildcards. For instance `Super%` will give you the result for **Superman**
