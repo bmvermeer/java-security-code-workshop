@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,32 +35,12 @@
         </ul>
     </div>
 </nav>
-<br>
 
 <div class="container">
-    <h1>Create user </h1>
-    <p>Search for users by username. (use % as wildcard e.g. Hell%)</p>
-    <form th:action="@{/addUser}" th:object="${user}" method="post">
-        <div class="row">
-            <div class="col-sm">Username:</div><div class="col-sm"><input type="text" th:value="${user.username}" name="username"/></div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Firstname:</div><div class="col-sm"><input type="text" th:value="${user.firstname}" name="firstname"/></div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Lastname:</div><div class="col-sm"><input type="text" th:value="${user.lastname}" name="lastname"/></div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Password:</div><div class="col-sm"><input type="text" th:value="${user.password}" name="password"/></div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Comment:</div><div class="col-sm"><input type="text" th:value="${user.comment}" name="comment"/></div>
-        </div>
-        <input type="submit"/>
-    </form>
+    <h1>Java Security Code Workshop</h1>
+    <p>powered by <a href="https://snyk.io">Snyk</a></p>
 </div>
 
-<hr>
 
 </body>
 </html>
