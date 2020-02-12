@@ -1,22 +1,22 @@
 # Java Security Code Workshop
-In this step by step workshop you'll learn how to exploit this Java application and the code changes you need to make to fix it.
+In this step by step workshop, you'll learn how to exploit this Java application and the code changes you need to make to fix it.
 
 ## Required software
 - Java 8
 - Maven
-- Browser (prefable Chrome)
+- Browser (preferably Chrome)
 - IDE / Code editor
 
 # Introduction
 
 This workshop contains a demo Java application build on with Spring boot and Thymeleaf.
 It contains a number of security issues in the source code.
-During this workshop you will locate, exploit and fix the vulnerabilities in this application.
+During this workshop, you will locate, exploit and fix the vulnerabilities in this application.
 
-The vulnerablilities covered in this workshop:
+The vulnerabilities covered in this workshop:
 - XML External entity injection (XXE)
 - SQL injection
-- Cross side scripting (XSS)
+- Cross-site scripting (XSS)
 - Encryption
 - 
 
@@ -27,14 +27,14 @@ The vulnerablilities covered in this workshop:
 - Run `mvn clean package`
 - Run `mvn spring-boot:run`
 
-Alternatively you can run this Spring boot app from your IDE if you wish to do that.
+Alternatively, you can run this Spring boot app from your IDE if you wish to do that.
 
 ## Application
 When your application is running you can access it at [http://localhost:8080/](http://localhost:8080/)
 
 ![homepage](images/index.png)
 
-This application allows you to search through a user database and allows you do some basic admin tasks on that.
+This application allows you to search through a user database and allows you to do some basic admin tasks on that.
 Play around for a bit to see how it works.
 
 
@@ -42,7 +42,7 @@ Play around for a bit to see how it works.
 
 ## Assignment 1 Search
 
-On the Search page you can search the users by **username**.
+On the Search page, you can search the users by **username**.
 By using a `%` you can provide wildcards. For instance `Super%` will give you the result for **Superman**
 Using the search term `%man`
 
@@ -73,7 +73,7 @@ Click to see [Hint 7](hints/search/hint7.md)
 
 ## Assignment 2 Import
 
-On the import page you can import new users by using an XML.
+On the import page, you can import new users by using an XML.
 We already created a sample XML file `users.xml` that you can use to import new users
 
 ![Import](images/import.png)
@@ -119,10 +119,10 @@ Click to see [Hint 3](hints/adduser/hint3.md)
 
 Click to see [Hint 4](hints/adduser/hint4.md)
 
-We just proved that we can execute code in the users browser.     
-We also showed that we can simple access and display the cookie. Imagine that we send this token in the cookie to another website and take over you session?
+We just proved that we can execute code in the user’s browser.     
+We also showed that we can simple access and display the cookie. Imagine that we send this token in the cookie to another website and take over your session?
 
-### 3d Fix this by santizing the input before it enters the database
+### 3d Fix this by sanitizing the input before it enters the database
 
 Click to see [Hint 5](hints/adduser/hint5.md)
 
@@ -131,6 +131,3 @@ Click to see [Hint 6](hints/adduser/hint6.md)
 Click to see [Hint 7](hints/adduser/hint7.md)
 
 Click to see [Hint 8](hints/adduser/hint8.md)
-
-
- 
