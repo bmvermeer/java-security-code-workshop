@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 public class UserController {
@@ -41,17 +44,24 @@ public class UserController {
 
 
     @GetMapping("/addUser")
-    public String addUser(Model model) {
+    public String addUser(Model model, HttpServletResponse response) {
+        setCookie(response);
         model.addAttribute("user", new User());
         return "addUser";
     }
 
     @PostMapping("/addUser")
-    public String addUser(@ModelAttribute User user) {
+    public String addUser(Model model, @ModelAttribute User user) {
         logger.info("New user submitted: {}", user);
         userRepo.save(user);
+        model.addAttribute("message", "user "+ user.getUsername() + " added");
         return "addUser";
     }
 
+    private void setCookie(HttpServletResponse response) {
+        Cookie newCookie = new Cookie("token", "java-code-workshop-12345");
+        newCookie.setMaxAge(24 * 60 * 60);
+        response.addCookie(newCookie);
+    }
 
 }
