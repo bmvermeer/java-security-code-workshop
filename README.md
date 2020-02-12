@@ -48,7 +48,7 @@ Using the search term `%man`
 
 ![Search](images/search.png)
 
-### 1a Try to create as search phrase that searches for the **firstname** 'Bruce'
+### 1a Try to create a search phrase that searches for the **firstname** 'Bruce'
 
     
 Click to see [Hint 1](hints/search/hint1.md)
