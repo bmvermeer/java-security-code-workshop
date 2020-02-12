@@ -99,9 +99,38 @@ Click to see [Hint 7](hints/import/hint7.md)
 
 Click to see [Hint 8](hints/import/hint8.md)
 
+## Assignment 3 Add User
 
+On the *Add User* page you can manually add new Users
+This is quite straight forward.
 
-    
+![AddUser](images/adduser.png)
+
+### 3a Try to insert a new user using the form.
+### 3b Try to do a code insertion when creating a new user.
+
+Click to see [Hint 1](hints/adduser/hint1.md)
+
+Click to see [Hint 2](hints/adduser/hint2.md)
+
+### 3c Try to display the token of a user that is on the page
+
+Click to see [Hint 3](hints/adduser/hint3.md)
+
+Click to see [Hint 4](hints/adduser/hint4.md)
+
+We just proved that we can execute code in the users browser.     
+We also showed that we can simple access and display the cookie. Imagine that we send this token in the cookie to another website and take over you session?
+
+### 3d Fix this by santizing the input before it enters the database
+
+Click to see [Hint 5](hints/adduser/hint5.md)
+
+Click to see [Hint 6](hints/adduser/hint6.md)
+
+Click to see [Hint 7](hints/adduser/hint7.md)
+
+Click to see [Hint 8](hints/adduser/hint8.md)
 
 
  
