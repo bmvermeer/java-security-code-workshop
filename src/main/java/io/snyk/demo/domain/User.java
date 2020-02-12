@@ -17,15 +17,12 @@ import javax.persistence.Table;
 @ToString
 public class User {
 
-    @NonNull private String firstname;
-    @NonNull private String lastname;
+    private String firstname;
+    private String lastname;
     @Id
-    @NonNull private String username;
-    @NonNull private String password;
+    private String username;
+    private String password;
 
     @Column(length = 10000)  private String comment;
-
-
-
 
 }
