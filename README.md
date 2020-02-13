@@ -164,11 +164,11 @@ A new page will open where you can enter the original password. Make sure that t
 
 Click to see [Hint 6](hints/password/hint6.md)
 
-Click to see [Hint 6](hints/password/hint7.md)
+Click to see [Hint 7](hints/password/hint7.md)
 
 ### 4d Increase the strenght the password encoder to 15
 
-Click to see [Hint 6](hints/password/hint8.md)
+Click to see [Hint 8](hints/password/hint8.md)
 
 
 
