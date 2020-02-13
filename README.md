@@ -131,3 +131,53 @@ Click to see [Hint 6](hints/adduser/hint6.md)
 Click to see [Hint 7](hints/adduser/hint7.md)
 
 Click to see [Hint 8](hints/adduser/hint8.md)
+
+### Assignment 4 passwords
+
+Password of the users are stored in plain text. This is not recommanded as the passwords are readible by default.
+For storing password it is recommanded to use a strong cryptographic hashing function.
+
+In short: a hashing function is a one-way 'encryption' function that transforms a String into a fixed sized sequence of characters (the hash).
+The function is irriverable so you cannot use the function to recover the orignal Sting.
+A cryptographic hashing function is a hashing function that is suitable for cryptographic perposes. More info ...
+
+### 4a Create a function `encodePassword(String)` in `PasswordUtil` that uses BCrypt to encode passwords.
+
+Click to see [Hint 1](hints/password/hint1.md)
+
+Click to see [Hint 2](hints/password/hint2.md)
+
+Click to see [Hint 3](hints/password/hint3.md)
+
+### 4b Make sure that the password for a User is not stored, instead store BCrypt hash
+
+Click to see [Hint 4](hints/password/hint4.md)
+
+Click to see [Hint 5](hints/password/hint5.md)
+
+### 4c Fix text password
+
+You can test the password of a user by clicking the blue "Test password ..." button in the Search page.
+A new page will open where you can enter the original password. Make sure that this functionality works again.
+
+![password](images/password.png)
+
+Click to see [Hint 6](hints/password/hint6.md)
+
+Click to see [Hint 6](hints/password/hint7.md)
+
+### 4d Increase the strenght the password encoder to 15
+
+Click to see [Hint 6](hints/password/hint8.md)
+
+
+
+
+
+
+
+ 
+
+
+
+ 
