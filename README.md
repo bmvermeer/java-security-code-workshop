@@ -131,7 +131,7 @@ Click to see [Hint 6](hints/adduser/hint6.md)
 Click to see [Hint 7](hints/adduser/hint7.md)
 
 
-### Assignment 4 passwords
+## Assignment 4 passwords
 
 The password of the users are stored in plain text. This is not recommended as the passwords are readable by default.
 For storing password it is recommended to use a strong cryptographic hashing function.
