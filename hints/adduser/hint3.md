@@ -1,3 +1,3 @@
 # Hint 3
 
-in javascript you can get the users cookie with `document.cookie`
+in Javascript, you can get the users cookie with `document.cookie`

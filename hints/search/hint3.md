@@ -1,2 +1,2 @@
 # Hint 3
-This search term is vulnarable for SQL injection. Close the query and start an `UPDATE` query
+This search term is vulnerable to SQL injection. Close the query and start an `UPDATE` query

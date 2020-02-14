@@ -1,7 +1,8 @@
 # Hint 1
 
-Spring security crypto
-Add this dependency
+Use the Spring security crypto library
+
+Add this dependency:
 ```xml
         <dependency>
             <groupId>org.springframework.security</groupId>
