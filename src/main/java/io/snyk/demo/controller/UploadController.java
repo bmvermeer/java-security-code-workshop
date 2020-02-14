@@ -57,7 +57,7 @@ public class UploadController {
                 redirectAttributes.addFlashAttribute("messages", messages);
 
             } else {
-                System.out.println("not an XML file!");
+                logger.error("not an XML file!");
             }
 
         } catch (IOException e) {

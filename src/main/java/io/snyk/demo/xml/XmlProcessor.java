@@ -60,7 +60,6 @@ public class XmlProcessor {
                 Map<String, String> values = new HashMap<>();
 
                 public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-                    System.out.println(qName);
                     if (qName.equalsIgnoreCase("USER")) user = true;
                     if (qName.equalsIgnoreCase("FIRSTNAME")) bfname = true;
                     if (qName.equalsIgnoreCase("LASTNAME")) blname = true;

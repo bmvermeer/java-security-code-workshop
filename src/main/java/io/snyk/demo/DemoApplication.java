@@ -3,17 +3,19 @@ package io.snyk.demo;
 
 import io.snyk.demo.domain.User;
 import io.snyk.demo.repo.UserRepo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 
 @SpringBootApplication
 public class DemoApplication {
+
+    private static final Logger logger = LogManager.getLogger(DemoApplication.class);
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -35,9 +37,9 @@ public class DemoApplication {
 
 
             // fetch all items on the grocery list
-            System.out.println("Messages found with");
-            System.out.println("-------------------------------");
-            userRepo.findAll().forEach(System.out::println);
+            logger.info("Users found with");
+            logger.info("-------------------------------");
+            userRepo.findAll().forEach(logger::info);
 
         };
     }

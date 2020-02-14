@@ -33,7 +33,6 @@ public class SearchRepo {
             return foundUsers;
         } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
             return Collections.singletonList(new User("","","",e.getMessage(),""));
         }
 
@@ -50,7 +49,6 @@ public class SearchRepo {
             return allUsers;
         } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
             return Collections.singletonList(new User("","","",e.getMessage(),""));
         }
     }
