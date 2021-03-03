@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.snyk.demo</groupId>
     <artifactId>java-code-workshop</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Java-Code_Workshop</name>
     <description>Java code workshop</description>
 
@@ -61,10 +61,22 @@
             <version>3.9</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+
 
     </dependencies>
 
     <build>
+        <finalName>java-application</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
