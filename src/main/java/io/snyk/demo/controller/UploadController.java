@@ -1,6 +1,7 @@
 package io.snyk.demo.controller;
 
 import io.snyk.demo.xml.XmlProcessor;
+import io.snyk.demo.yaml.YamlProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,6 +27,9 @@ public class UploadController {
 
     @Autowired
     XmlProcessor xmlProcessor;
+
+    @Autowired
+    YamlProcessor yamlProcessor;
 
     private static final Logger logger = LogManager.getLogger(XmlProcessor.class);
 
@@ -46,7 +51,11 @@ public class UploadController {
 
         try {
 
-            if (file.getContentType().equals("text/xml")) {
+           if (file.getContentType().contains("yaml")) {
+                InputStream inputStream = file.getInputStream();
+                List<String> messages = yamlProcessor.parseYaml(inputStream);
+                redirectAttributes.addFlashAttribute("messages", messages);
+            } else if (file.getContentType().equals("text/xml")) {
                 // Get the file and save it somewhere
                 byte[] bytes = file.getBytes();
                 Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
@@ -57,7 +66,7 @@ public class UploadController {
                 redirectAttributes.addFlashAttribute("messages", messages);
 
             } else {
-                logger.error("not an XML file!");
+                logger.error("not an XML or Yaml file!");
             }
 
         } catch (IOException e) {

@@ -38,6 +38,23 @@ public class SearchRepo {
 
     }
 
+//    public List<User> findUsersByUsername(String parameter) {
+//        try {
+//            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+//            String query = "SELECT * FROM USERS WHERE username LIKE ?";
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, parameter);
+//            ResultSet result = statement.executeQuery();
+//            List<User> foundUsers = createUsersFromResultSet(result);
+//            logger.info("Users found: {}", foundUsers);
+//            return foundUsers;
+//        } catch (SQLException e) {
+//            logger.error(e);
+//            return Collections.singletonList(new User("","","",e.getMessage(),""));
+//        }
+//
+//    }
+
     public List<User> findAllUsers() {
         try {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
