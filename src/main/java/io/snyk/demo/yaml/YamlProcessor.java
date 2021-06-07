@@ -7,15 +7,16 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class YamlProcessor {
@@ -32,67 +33,24 @@ public class YamlProcessor {
     }
 
     public List<String> parseYaml(InputStream is) throws FileNotFoundException {
-        List<String> messages = new ArrayList<>();
-        Yaml yaml = new Yaml(new Constructor(User.class));
-
-        for (Object object : yaml.loadAll(is)) {
-            if (object instanceof User) {
-                User newUser = (User) object;
-                repo.save(newUser);
-                messages.add("created user " + newUser);
-            } else {
-                logger.error("not a valid user ?", object);
-                messages.add("not a valid user: " + object);
-            }
-        }
-
-        return messages;
-    }
-
-    public void parseYaml1(File f) throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream(f);
         Yaml yaml = new Yaml();
-        LinkedHashMap lhm = (LinkedHashMap) yaml.load(inputStream);
-        lhm.values().forEach(v -> System.out.println(v.getClass()));
+        HashMap lhm = (LinkedHashMap) yaml.load(is);
+//        logger.info(lhm);
+        ArrayList users = (ArrayList) lhm.get("user");
+        return (List<String>) users.stream()
+                .map(this::createUser)
+                .collect(Collectors.toList());
     }
 
-    public void parseYaml2(File f) throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream(f);
-        Yaml yaml = new Yaml(new Constructor(User.class));
-
-        for (Object object : yaml.loadAll(inputStream)) {
-            User newUser = (User) object;
-            System.out.println(newUser);
-
-        }
-
+    private String createUser(Object hashmapUser) {
+        HashMap hashmap = (LinkedHashMap) hashmapUser;
+        User newEntry = new User(hashmap.get("firstname").toString()
+                , hashmap.get("lastname").toString()
+                , hashmap.get("username").toString()
+                , hashmap.get("password").toString()
+                , hashmap.get("comment").toString());
+        return repo.save(newEntry).toString();
     }
-
-    public void parseYaml3(File f) throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream(f);
-        Yaml yaml = new Yaml(new Constructor(Group.class));
-        Group group = yaml.load(inputStream);
-        group.getPeople().forEach(System.out::println);
-    }
-
-
-    public static void main(String[] args) throws FileNotFoundException {
-        YamlProcessor yp = new YamlProcessor();
-
-
-//        File f = new File("/Users/brianvermeer/demo/snyk/java-code-workshop/examples/users.yml");
-//        yp.parseYaml2(f);
-
-        File fbatch = new File("/Users/brianvermeer/demo/snyk/java-code-workshop/examples/group.yml");
-        yp.parseYaml3(fbatch);
-
-//        File f = new File("/Users/brianvermeer/demo/snyk/java-code-workshop/examples/laughs.yml");
-//        yp.parseYaml1(f);
-
-
-
-    }
-
 
 
 }

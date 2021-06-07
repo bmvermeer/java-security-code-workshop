@@ -21,12 +21,12 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class XmlProcessor {
+public class XmlProcessorSax {
 
     @Autowired
     UserRepo userRepo;
 
-    private static final Logger logger = LogManager.getLogger(XmlProcessor.class);
+    private static final Logger logger = LogManager.getLogger(XmlProcessorSax.class);
 
     private SAXParserFactory factory = SAXParserFactory.newInstance();
     private SAXParser saxParser;
@@ -36,7 +36,7 @@ public class XmlProcessor {
 
 
 
-    public XmlProcessor() {
+    public XmlProcessorSax() {
         try {
 
             saxParser = factory.newSAXParser();
@@ -141,6 +141,10 @@ public class XmlProcessor {
     }
 
 
-
+/*
+    factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+    saxParser.getXMLReader().setFeature("http://xml.org/sax/features/external-general-entities", false);
+    factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+ */
 
 }

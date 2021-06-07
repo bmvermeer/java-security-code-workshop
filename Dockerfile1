@@ -1,0 +1,70 @@
+#STEP1
+FROM maven:3-openjdk-11
+RUN mkdir /usr/src/project
+COPY . /usr/src/project
+WORKDIR /usr/src/project
+RUN mvn package -DskipTests
+CMD mvn spring-boot:run
+
+#STEP2
+
+FROM maven:3-openjdk-11 AS build
+RUN mkdir /usr/src/project
+COPY . /usr/src/project
+WORKDIR /usr/src/project
+RUN mvn package -DskipTests
+
+FROM adoptopenjdk/openjdk11:alpine-jre
+RUN mkdir /project
+COPY --from=build /usr/src/project/target/java-application.jar /project/
+WORKDIR /project
+CMD java -jar java-application.jar
+
+
+
+
+#FROM maven:3-openjdk-11 AS build
+#RUN mkdir /usr/src/project
+#COPY . /usr/src/project
+#WORKDIR /usr/src/project
+#RUN mvn package -DskipTests
+#
+#FROM openjdk:8-jre-alpine
+#RUN mkdir /project
+#COPY --from=build /usr/src/project/target/java-code-wrokshop-0.0.1.SNAPSHOT.jar /project/
+#WORKDIR /project
+#CMD java -jar java-code-wrokshop-0.0.1.SNAPSHOT.jar
+
+
+
+
+#FROM maven:3-openjdk-11 AS build
+#RUN mkdir /usr/src/project
+#COPY . /usr/src/project
+#WORKDIR /usr/src/project
+#RUN mvn clean package -DskipTests
+#
+#FROM adoptopenjdk/openjdk11:alpine-jre
+#RUN mkdir /project
+#RUN addgroup --system brianvermeer && adduser -S -s /bin/false -G brianvermeer brianvermeer
+#WORKDIR /project
+#COPY --from=build /usr/src/project/target/java-code-workshop-0.0.1-SNAPSHOT.jar /project/
+#RUN chown -R brianvermeer:brianvermeer /project
+#USER brianvermeer
+#ENTRYPOINT java -jar java-code-workshop-0.0.1-SNAPSHOT.jar
+
+FROM maven:3.6.3-jdk-11-slim@sha256:68ce1cd457891f48d1e137c7d6a4493f60843e84c9e2634e3df1d3d5b381d36c AS build
+RUN mkdir /project
+COPY . /project
+WORKDIR /project
+RUN mvn clean package -DskipTests
+
+FROM adoptopenjdk/openjdk11:jre-11.0.9.1_1-alpine@sha256:b6ab039066382d39cfc843914ef1fc624aa60e2a16ede433509ccadd6d995b1f
+RUN apk add dumb-init
+RUN mkdir /app
+RUN addgroup --system javauser && adduser -S -s /bin/false -G javauser javauser
+COPY --from=build /project/target/java-application.jar /app/java-application.jar
+WORKDIR /app
+RUN chown -R javauser:javauser /app
+USER javauser
+CMD "dumb-init" "java" "-jar" "java-application.jar"

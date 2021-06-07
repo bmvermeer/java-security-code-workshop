@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -29,8 +31,27 @@ public class UserController {
     private static final Logger logger = LogManager.getLogger(UserController.class);
 
 
+    @GetMapping("/user")
+    public void directLink (@RequestParam String param, HttpServletResponse response) throws IOException {
+        List<User> found = searchRepo.findUsersByUsername(param);
+        response.setContentType("text/html");
+        response.getWriter().write("<h1>User: "+ param + "</h1>");
+
+        for (User user : found) {
+            String output = "<ul>" +
+                    "<li>User Name: %s</li>" +
+                    "<li>First Name: %s</li>" +
+                    "<li>Last Name:  %s</li>" +
+                    "<li>Comment: %s</li>" +
+                    "</ul>";
+            response.getWriter().write(String.format(output, user.getUsername(), user.getFirstname(), user.getLastname(), user.getComment()));
+        }
+        response.getWriter().flush();
+    }
+
     @GetMapping("/users")
     public String allUsers(Model model) {
+
         model.addAttribute("users", searchRepo.findAllUsers());
         return "users";
     }
@@ -59,7 +80,7 @@ public class UserController {
     }
 
     private void setCookie(HttpServletResponse response) {
-        Cookie newCookie = new Cookie("token", "java-code-workshop-12345");
+        Cookie newCookie = new Cookie("token", "java-code-workshop-12345-" + System.currentTimeMillis());
         newCookie.setMaxAge(24 * 60 * 60);
         response.addCookie(newCookie);
     }

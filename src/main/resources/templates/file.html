@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -42,23 +42,13 @@
 <br>
 
 <div class="container">
-    <h1>Import Users</h1>
-    <p>Imported XML file with the following output:</p>
-    <hr>
-    <div th:each="message:${messages}">
-        <div class="card">
-            <h5 class="card-header">Message</h5>
-            <div class="card-body" th:text="${message}">
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-
+    <h1>Upload File</h1>
+    <p>Choose file </p>
+    <form method="POST" action="/file" enctype="multipart/form-data">
+        <input type="file" name="file"/><br/><br/>
+        <input type="submit" value="Submit"/>
+    </form>
 </div>
 
 </body>
 </html>
-
-
-
