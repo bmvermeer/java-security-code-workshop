@@ -16,6 +16,7 @@ public class UserApiController {
     @Autowired
     SearchRepo searchRepo;
 
+
     @GetMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> allUsers(Model model) {
         return searchRepo.findAllUsers();
