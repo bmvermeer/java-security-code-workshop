@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-public class UploadControllerTest {
+public class FileControllerTest {
 
-    UploadController controller = new UploadController();
+    FileController controller = new FileController();
 
 
     @Test
