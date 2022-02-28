@@ -1,0 +1,11 @@
+version: "2"
+services:
+  superheroes8111:
+    build:
+      context: .
+      dockerfile: Dockerfile8111
+    container_name: superheroes8111
+    environment:
+      - DOCKER=1
+    ports:
+      - "8082:8081"
