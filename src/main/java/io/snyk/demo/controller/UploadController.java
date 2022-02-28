@@ -1,6 +1,6 @@
 package io.snyk.demo.controller;
 
-import io.snyk.demo.xml.XmlProcessorDom4J;
+import io.snyk.demo.xml.XmlProcessorSax;
 import io.snyk.demo.yaml.YamlProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +21,7 @@ import java.util.List;
 public class UploadController {
 
     @Autowired
-    XmlProcessorDom4J xmlProcessor;
+    XmlProcessorSax xmlProcessor;
 
     @Autowired
     YamlProcessor yamlProcessor;

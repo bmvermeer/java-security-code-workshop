@@ -13,8 +13,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -129,7 +129,7 @@ public class XmlProcessorSax {
         }
     }
 
-    public List<String> parseXML(File f) {
+    public List<String> parseXML(InputStream f) {
         messages.clear();
         try {
             saxParser.parse(f,handler);

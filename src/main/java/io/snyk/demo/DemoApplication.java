@@ -25,7 +25,6 @@ public class DemoApplication {
         return (args) -> {
             // save a few of items to the grocery list
 
-
             userRepo.save(new User("Bruce", "Wayne", "Batman", "ToTheBadmobil", "lives in a cave in gotham"));
             userRepo.save(new User("Peter", "Parker", "Spiderman", "FriendlyNeighborhood", "bitten by a spider, lives in NYC"));
             userRepo.save(new User("Tony", "Stark", "Ironman", "HeyJarvis", "Owner of Stark Industries"));
@@ -35,6 +34,10 @@ public class DemoApplication {
 
 
             // fetch all items on the grocery list
+            logger.info("-------------------------------");
+            logger.info("Java Version = " + System.getProperty("java.version"));
+            logger.info("-------------------------------");
+
             logger.info("Users found with");
             logger.info("-------------------------------");
             userRepo.findAll().forEach(logger::info);
