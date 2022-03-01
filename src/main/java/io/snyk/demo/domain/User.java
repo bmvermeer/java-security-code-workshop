@@ -25,4 +25,5 @@ public class User {
 
     @Column(length = 10000)  private String comment;
 
+
 }

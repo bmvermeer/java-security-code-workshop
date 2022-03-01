@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 
-
 @SpringBootApplication
 public class DemoApplication {
 
@@ -21,12 +20,10 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-
     @Bean
     public CommandLineRunner init(UserRepo userRepo) {
         return (args) -> {
             // save a few of items to the grocery list
-
 
             userRepo.save(new User("Bruce", "Wayne", "Batman", "ToTheBadmobil", "lives in a cave in gotham"));
             userRepo.save(new User("Peter", "Parker", "Spiderman", "FriendlyNeighborhood", "bitten by a spider, lives in NYC"));
@@ -37,6 +34,10 @@ public class DemoApplication {
 
 
             // fetch all items on the grocery list
+            logger.info("-------------------------------");
+            logger.info("Java Version = " + System.getProperty("java.version"));
+            logger.info("-------------------------------");
+
             logger.info("Users found with");
             logger.info("-------------------------------");
             userRepo.findAll().forEach(logger::info);

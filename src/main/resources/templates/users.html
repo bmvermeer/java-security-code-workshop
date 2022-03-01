@@ -32,6 +32,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/addUser">Add User</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/file">File Upload</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login?logout">Logout</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -41,7 +47,7 @@
     <h1> Search Users </h1>
     <p>Search for users by username. (use % as wildcard)</p>
     <form th:action="@{/users}" method="post">
-        <input type="text" th:value="${username}" name="username"/>
+        <input type="text" th:value="${username}" name="username" size="50"/>
         <input type="submit"/>
     </form>
 </div>
@@ -52,7 +58,7 @@
 <div th:each="user : ${users}">
     <div class="container">
         <div class="card" style="width: 40rem;">
-            <h5 class="card-header" th:text="${user.username}">Username</h5>
+            <a th:href="'/user?param=' + ${user.username}" target="_blank"><h5 class="card-header" th:text="${user.username}">Username</h5></a>
             <div class="card-body">
                 <div class="container">
                     <div class="row">

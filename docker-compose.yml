@@ -1,0 +1,9 @@
+version: "2"
+services:
+  superheroes:
+    build: .
+    container_name: superheroes
+    environment:
+      - DOCKER=1
+    ports:
+      - "8081:8081"

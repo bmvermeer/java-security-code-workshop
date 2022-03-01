@@ -5,7 +5,7 @@ WORKDIR /usr/src/project
 RUN mvn package -DskipTests
 #CMD mvn spring-boot:run
 
-FROM eclipse-temurin:8-jre
+FROM openjdk:8u111-jre
 RUN mkdir /project
 COPY --from=build /usr/src/project/target/java-application.jar /project/
 WORKDIR /project

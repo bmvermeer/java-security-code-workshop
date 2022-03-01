@@ -1,0 +1,32 @@
+
+spring:
+  security:
+    user.name: admin # Default user name.
+    user.password: foobar # Password
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+  h2:
+    console.enabled: true
+
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: 97d81af458f0357feba8
+#            client-secret: ad410610e7a4675c444082773079f56d6b4c8af4
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+server:
+  port: 8081
+#        include: *

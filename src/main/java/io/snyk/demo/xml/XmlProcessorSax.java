@@ -13,20 +13,20 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Component
-public class XmlProcessor {
+public class XmlProcessorSax {
 
     @Autowired
     UserRepo userRepo;
 
-    private static final Logger logger = LogManager.getLogger(XmlProcessor.class);
+    private static final Logger logger = LogManager.getLogger(XmlProcessorSax.class);
 
     private SAXParserFactory factory = SAXParserFactory.newInstance();
     private SAXParser saxParser;
@@ -36,7 +36,7 @@ public class XmlProcessor {
 
 
 
-    public XmlProcessor() {
+    public XmlProcessorSax() {
         try {
 
             saxParser = factory.newSAXParser();
@@ -129,7 +129,7 @@ public class XmlProcessor {
         }
     }
 
-    public List<String> parseXML(File f) {
+    public List<String> parseXML(InputStream f) {
         messages.clear();
         try {
             saxParser.parse(f,handler);
@@ -141,6 +141,10 @@ public class XmlProcessor {
     }
 
 
-
+/*
+    factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+    saxParser.getXMLReader().setFeature("http://xml.org/sax/features/external-general-entities", false);
+    factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+ */
 
 }

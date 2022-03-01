@@ -1,0 +1,12 @@
+people:
+    - firstname: A
+      lastname: AA
+      children: &a [{firstname: a}, {firstname: a, lastname: a} , {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}, {firstname: a, lastname: a}]
+    - children: &b [{children: *a},{children: *a},{children: *a},{children: *a},{children: *a},{children: *a},{children: *a},{children: *a},{children: *a},{children: *a}]
+    - children: &c [{children: *b},{children: *b},{children: *b},{children: *b},{children: *b},{children: *b},{children: *b},{children: *b},{children: *b},{children: *b}]
+    - children: &d [{children: *c}, {children: *c},{children: *c},{children: *c},{children: *c},{children: *c},{children: *c},{children: *c},{children: *c},{children: *c}]
+    - children: &e [{children: *d}, {children: *d},{children: *d},{children: *d},{children: *d},{children: *d},{children: *d},{children: *d},{children: *d},{children: *d}]
+    - children: &f [{children: *e}, {children: *e},{children: *e},{children: *e},{children: *e},{children: *e},{children: *e},{children: *e},{children: *e},{children: *e}]
+    - children: &g [{children: *f}, {children: *f},{children: *f},{children: *f},{children: *f},{children: *f},{children: *f},{children: *f},{children: *f},{children: *f}]
+    - children: &h [{children: *g}, {children: *g},{children: *g},{children: *g},{children: *g},{children: *g},{children: *g},{children: *g},{children: *g},{children: *g}]
+    - children: &j [{children: *h}, {children: *h},{children: *h},{children: *h},{children: *h},{children: *h},{children: *h},{children: *h},{children: *h},{children: *h}]

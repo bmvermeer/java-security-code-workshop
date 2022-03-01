@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
@@ -38,27 +38,30 @@
         </ul>
     </div>
 </nav>
-
 <br>
 
+<hr>
+
 <div class="container">
-    <h1>Import Users</h1>
-    <p>Imported XML file with the following output:</p>
+    <h1>Files</h1>
     <hr>
-    <div th:each="message:${messages}">
-        <div class="card">
-            <h5 class="card-header">Message</h5>
-            <div class="card-body" th:text="${message}">
-            </div>
+    <div class="card">
+        <h5 class="card-header" th:text="'Folder: ' + ${folder}"></h5>
+        <div class="card-body">
+            <table>
+                <div th:each="file : ${files}">
+
+
+                    <tr>
+                        <td th:text="${file}"></td>
+                    </tr>
+
+                </div>
+            </table>
         </div>
     </div>
     <br>
 </div>
 
-</div>
-
 </body>
 </html>
-
-
-
