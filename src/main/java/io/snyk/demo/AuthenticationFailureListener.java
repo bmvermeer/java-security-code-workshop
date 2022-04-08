@@ -1,4 +1,4 @@
-package io.snyk.demo.yaml;
+package io.snyk.demo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
