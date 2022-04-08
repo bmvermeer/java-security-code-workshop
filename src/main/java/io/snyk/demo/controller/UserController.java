@@ -82,6 +82,7 @@ public class UserController {
     private void setCookie(HttpServletResponse response) {
         Cookie newCookie = new Cookie("token", "java-code-workshop-12345-" + System.currentTimeMillis());
         newCookie.setMaxAge(24 * 60 * 60);
+        newCookie.setHttpOnly(false);
         response.addCookie(newCookie);
     }
 
