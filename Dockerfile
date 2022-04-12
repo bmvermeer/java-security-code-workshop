@@ -2,7 +2,7 @@ FROM maven:3-openjdk-8 as build
 RUN mkdir /usr/src/project
 COPY . /usr/src/project
 WORKDIR /usr/src/project
-RUN mvn package -DskipTests
+RUN --mount=target=$HOME/.m2,type=cache mvn package -DskipTests
 #CMD mvn spring-boot:run
 
 FROM eclipse-temurin:8-jre
